@@ -30,13 +30,10 @@ namespace WorkWithList
             services.DisplayInfo(_allCarsList);
 
             Console.WriteLine("What car need to delete from list? Enter car name: ");
-            
-            while ( services.UserInputCheck() == null)
-            {
-                services.UserInputCheck();
-            }
 
-            
+            services.RemoveItem(_allCarsList);
+            services.DisplayInfo(_allCarsList);
+
 
         }
         private void AddCarsToList(string[] cars)
