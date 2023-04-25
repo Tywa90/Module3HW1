@@ -30,11 +30,21 @@ namespace WorkWithList
             Console.WriteLine("------------");
         }
 
+        public bool RemoveItem(List<string> cars)
+        {
+            while (UserInputCheck() == null)
+            {
+                UserInputCheck();
+            }
+
+            var result = cars.Remove(_userAnswer);
+            return result;
+        }
+
         public string UserInputCheck()
         {
-            // Сделать проверкку на верхний нижний регистр, и тримм пробелы
             string? userString = Console.ReadLine();
-            
+
             if (!string.IsNullOrEmpty(userString) && !string.IsNullOrWhiteSpace(userString))
             {
                 _userAnswer = userString.Trim();
@@ -47,21 +57,31 @@ namespace WorkWithList
             }
         }
 
-        public void RemoveItem(List<string> cars)
+        public void RemoveItemByIndex(List<string> cars)
         {
-            while (UserInputCheck() == null)
+            Console.WriteLine("Enter the index of item to delete: ");
+            int number = -1;
+            while (true)
             {
-                UserInputCheck();
+                string text = Console.ReadLine();
+                if (int.TryParse(text, out number))
+                {
+                    //Console.WriteLine("Вы ввели число {0}", number);
+                    break;
+                }
+                Console.WriteLine("Сan't recognize the number. Try again");
             }
 
-            if (cars.Remove(_userAnswer))
+            if (number >= 0 && number <= cars.Count)
             {
-                Console.WriteLine("Delete sucsefull");
+                Console.WriteLine($"{cars[number]} was deleted from list\n");
+                cars.RemoveAt(number);
             }
             else
             {
-                Console.WriteLine("Delete error");
+                Console.WriteLine("Out of index range in cars list");
             }
+
         }
     }
 }
