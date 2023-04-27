@@ -6,9 +6,7 @@ namespace WorkWithList
     {
         private static void Main(string[] args)
         {
-            // Starter starter = new Starter();
-            // starter.Run();
-            var cars = new CarsT<string>();
+            var cars = new Cars<string>();
 
             cars.Add("Tesla");
             cars.Add("Jeep");
@@ -17,7 +15,7 @@ namespace WorkWithList
 
             cars.AddRange(new string[] { "Subaru", "Toyota", "Nissan", "MAN", "SEAT", "Skoda", "Bentley", "Bugatti", "Lamborghini" });
 
-
+            cars.Remove("Audi");
         }
     }
 }
