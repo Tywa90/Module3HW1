@@ -36,8 +36,9 @@ namespace WorkWithList
             services.DisplayInfo(_allCarsList);
 
             services.RemoveItemByIndex(_allCarsList);
-            services.DisplayInfo(_allCarsList);
 
+            Cars cars = new Cars(_allCarsList);
+            services.DisplayInfo(cars);
         }
         private void AddCarsToList(string[] cars)
         {
@@ -46,6 +47,8 @@ namespace WorkWithList
                 _allCarsList.Add(item);
             }
         }
+
+        
 
     }
 }

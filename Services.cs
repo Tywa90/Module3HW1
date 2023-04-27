@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,22 +12,41 @@ namespace WorkWithList
         private string _userAnswer;
         public void DisplayInfo(string[] cars)
         {
-            foreach (var item in cars)
+            IEnumerator carsEnumerator = cars.GetEnumerator();
+            while (carsEnumerator.MoveNext())
             {
+                string item = (string)carsEnumerator.Current;
                 Console.WriteLine(item);
             }
+            carsEnumerator.Reset();
+
             Console.WriteLine("------------");
         }
 
         public void DisplayInfo(List<string> cars)
         {
-            foreach (var item in cars)
+            IEnumerator carsEnumerator = cars.GetEnumerator();
+            while (carsEnumerator.MoveNext())
             {
+                string item = (string)carsEnumerator.Current;
                 Console.WriteLine(item);
             }
+            carsEnumerator.Reset();
 
             Console.WriteLine($"Count: {cars.Count}");
             Console.WriteLine($"Capacity: {cars.Capacity}");
+            Console.WriteLine("------------");
+        }
+
+        public void DisplayInfo(Cars cars)
+        {
+            foreach(var car in cars)
+            {
+                Console.WriteLine(car);
+            }
+
+            Console.WriteLine($"Count: {cars.FinalCarsList.Count}");
+            Console.WriteLine($"Capacity: {cars.FinalCarsList.Capacity}");
             Console.WriteLine("------------");
         }
 
@@ -66,7 +86,6 @@ namespace WorkWithList
                 string text = Console.ReadLine();
                 if (int.TryParse(text, out number))
                 {
-                    //Console.WriteLine("Вы ввели число {0}", number);
                     break;
                 }
                 Console.WriteLine("Сan't recognize the number. Try again");
@@ -79,9 +98,10 @@ namespace WorkWithList
             }
             else
             {
-                Console.WriteLine("Out of index range in cars list");
+                Console.WriteLine("Out of index range in cars list\n");
             }
 
         }
+
     }
 }
