@@ -16,6 +16,7 @@ namespace WorkWithList
             _starterArr = new string[] { "Ford", "Cadilac", "Tesla", "Jeep" };
             _allCarsList = new List<string>();
         }
+
         public void Run()
         {
             Services services = new Services();
@@ -40,6 +41,7 @@ namespace WorkWithList
             Cars cars = new Cars(_allCarsList);
             services.DisplayInfo(cars);
         }
+
         private void AddCarsToList(string[] cars)
         {
             foreach (var item in _starterArr)
@@ -47,8 +49,5 @@ namespace WorkWithList
                 _allCarsList.Add(item);
             }
         }
-
-        
-
     }
 }

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace WorkWithList
 {
     public class VolkswagenAG
-        
     {
         public static IReadOnlyCollection<string> VolkswagenList()
         {

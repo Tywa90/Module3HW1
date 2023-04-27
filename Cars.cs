@@ -9,11 +9,12 @@ namespace WorkWithList
 {
     public class Cars : IEnumerable<string>
     {
-        public List<string> FinalCarsList { get; }
         public Cars(List<string> finalList)
         {
             FinalCarsList = finalList;
         }
+
+        public List<string> FinalCarsList { get; }
 
         public IEnumerator<string> GetEnumerator()
         {

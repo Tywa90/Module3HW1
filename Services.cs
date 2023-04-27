@@ -18,6 +18,7 @@ namespace WorkWithList
                 string item = (string)carsEnumerator.Current;
                 Console.WriteLine(item);
             }
+
             carsEnumerator.Reset();
 
             Console.WriteLine("------------");
@@ -31,6 +32,7 @@ namespace WorkWithList
                 string item = (string)carsEnumerator.Current;
                 Console.WriteLine(item);
             }
+
             carsEnumerator.Reset();
 
             Console.WriteLine($"Count: {cars.Count}");
@@ -40,7 +42,7 @@ namespace WorkWithList
 
         public void DisplayInfo(Cars cars)
         {
-            foreach(var car in cars)
+            foreach (string car in cars)
             {
                 Console.WriteLine(car);
             }
@@ -88,6 +90,7 @@ namespace WorkWithList
                 {
                     break;
                 }
+
                 Console.WriteLine("Сan't recognize the number. Try again");
             }
 
@@ -100,8 +103,6 @@ namespace WorkWithList
             {
                 Console.WriteLine("Out of index range in cars list\n");
             }
-
         }
-
     }
 }
