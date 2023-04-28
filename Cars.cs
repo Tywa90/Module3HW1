@@ -76,7 +76,7 @@ namespace WorkWithList
         {
             if (index < 0 || index >= _length)
             {
-                Console.WriteLine("RemoveAt index is not correct");
+                Console.WriteLine("Remove index is not correct");
                 return;
             }
 

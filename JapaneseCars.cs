@@ -13,7 +13,7 @@ namespace WorkWithList
 
         public override string ToString()
         {
-            return $"I'm {Name}";
+            return $"{Name}";
         }
 
         public int CompareTo(JapaneseCars? other)

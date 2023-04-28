@@ -16,7 +16,7 @@ namespace WorkWithList
             cars.AddRange(new string[] { "Bentley", "Bugatti", "Ducati", "Lamborghini", "Seat", "MAN", "Scania", "Skoda", "Porsche", "Volkswagen" });
 
             cars.Remove("Audi");
-            Console.WriteLine(cars.IsRemoved);
+            Console.WriteLine($"Delete item: " + cars.IsRemoved);
             cars.RemoveAt(2);
 
             cars.Sort();
@@ -26,6 +26,7 @@ namespace WorkWithList
                 Console.WriteLine(car);
             }
 
+            Console.WriteLine();
             var userCollection = new Cars<JapaneseCars>();
             var toyota = new JapaneseCars() { Name = "Toyota" };
             userCollection.Add(new JapaneseCars() { Name = "Subaru" });
@@ -35,8 +36,8 @@ namespace WorkWithList
 
             var array = new JapaneseCars[2]
             {
-                new JapaneseCars() { Name = "Acura"},
-                new JapaneseCars() { Name = "Honda"}
+                new JapaneseCars() { Name = "Acura" },
+                new JapaneseCars() { Name = "Honda" }
             };
 
             userCollection.AddRange(array);

@@ -12,6 +12,7 @@ namespace WorkWithList
         private T[] _cars;
         private int _length;
         private int position = -1;
+
         public CarsEnumerator(T[] array, int length)
         {
             _cars = array;
@@ -32,8 +33,6 @@ namespace WorkWithList
         }
 
         object IEnumerator.Current => Current;
-
-        //string IEnumerator<string>.Current => throw new NotImplementedException();
 
         public bool MoveNext()
         {
