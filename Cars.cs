@@ -57,6 +57,7 @@ namespace WorkWithList
                 if (item.Equals(_carsList[i]))
                 {
                     index = i;
+                    break;
                 }
             }
 

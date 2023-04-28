@@ -11,6 +11,11 @@ namespace WorkWithList
     {
         public string Name { get; set; }
 
+        public override string ToString()
+        {
+            return $"I'm {Name}";
+        }
+
         public int CompareTo(JapaneseCars? other)
         {
             return Name.CompareTo(other.Name);
